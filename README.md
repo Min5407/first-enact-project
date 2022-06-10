@@ -29,8 +29,8 @@ my-app/
 
 For the project to build, **these files must exist with exact filenames**:
 
-* `package.json` is the core package manifest for the project
-* `src/index.js` is the JavaScript entry point.
+- `package.json` is the core package manifest for the project
+- `src/index.js` is the JavaScript entry point.
 
 You can delete or rename the other files.
 
@@ -72,19 +72,20 @@ These tasks will execute all valid tests (files that end in `-specs.js`) that ar
 
 The @enact/cli tool will check the project's `package.json` looking for an optional `enact` object for a few customization options:
 
-* `template` _[string]_ - Filepath to an alternate HTML template to use with the [Webpack html-webpack-plugin](https://github.com/jantimon/html-webpack-plugin).
-* `isomorphic` _[string]_ - Alternate filepath to a custom isomorphic-compatible entry point. Not needed if main entry point is already isomorphic-compatible.
-* `title` _[string]_ - Title text that should be put within the HTML's `<title></title>` tags. Note: if this is a webOS-project, the title will, by default, be auto-detected from the **appinfo.json** content.
-* `theme` _[object]_ - A simplified string name to extrapolate `fontGenerator`, `ri`, and `screenTypes` preset values from. For example, `"sandstone"`.
-* `fontGenerator` _[string]_ - Filepath to a CommonJS fontGenerator module which will build locale-specific font CSS to inject into the HTML. By default, will use any preset for a specified theme or fallback to sandstone.
-* `ri` _[object]_ - Resolution independence options to be forwarded to the [LESS plugin](https://github.com/enactjs/less-plugin-resolution-independence). By default, will use any preset for a specified theme or fallback to sandstone.
-* `screenTypes` _[array|string]_ - Array of 1 or more screentype definitions to be used with prerender HTML initialization. Can alternatively reference a json filepath to read for screentype definitions.  By default, will use any preset for a specified theme or fallback to sandstone.
-* `nodeBuiltins` _[object]_ - Configuration settings for polyfilling NodeJS built-ins. See `node` [webpack option](https://webpack.js.org/configuration/node/).
-* `deep` _[string|array]_ - 1 or more JavaScript conditions that, when met, indicate deeplinking and any prerender should be discarded.
-* `target` _[string|array]_ - A build-type generic preset string (see `target` [webpack option](https://webpack.js.org/configuration/target/)) or alternatively a specific [browserslist array](https://github.com/browserslist/browserslist) of desired targets.
-* `proxy` _[string]_ - Proxy target during project `serve` to be used within the [http-proxy-middleware](https://github.com/chimurai/http-proxy-middleware).
+- `template` _[string]_ - Filepath to an alternate HTML template to use with the [Webpack html-webpack-plugin](https://github.com/jantimon/html-webpack-plugin).
+- `isomorphic` _[string]_ - Alternate filepath to a custom isomorphic-compatible entry point. Not needed if main entry point is already isomorphic-compatible.
+- `title` _[string]_ - Title text that should be put within the HTML's `<title></title>` tags. Note: if this is a webOS-project, the title will, by default, be auto-detected from the **appinfo.json** content.
+- `theme` _[object]_ - A simplified string name to extrapolate `fontGenerator`, `ri`, and `screenTypes` preset values from. For example, `"sandstone"`.
+- `fontGenerator` _[string]_ - Filepath to a CommonJS fontGenerator module which will build locale-specific font CSS to inject into the HTML. By default, will use any preset for a specified theme or fallback to sandstone.
+- `ri` _[object]_ - Resolution independence options to be forwarded to the [LESS plugin](https://github.com/enactjs/less-plugin-resolution-independence). By default, will use any preset for a specified theme or fallback to sandstone.
+- `screenTypes` _[array|string]_ - Array of 1 or more screentype definitions to be used with prerender HTML initialization. Can alternatively reference a json filepath to read for screentype definitions. By default, will use any preset for a specified theme or fallback to sandstone.
+- `nodeBuiltins` _[object]_ - Configuration settings for polyfilling NodeJS built-ins. See `node` [webpack option](https://webpack.js.org/configuration/node/).
+- `deep` _[string|array]_ - 1 or more JavaScript conditions that, when met, indicate deeplinking and any prerender should be discarded.
+- `target` _[string|array]_ - A build-type generic preset string (see `target` [webpack option](https://webpack.js.org/configuration/target/)) or alternatively a specific [browserslist array](https://github.com/browserslist/browserslist) of desired targets.
+- `proxy` _[string]_ - Proxy target during project `serve` to be used within the [http-proxy-middleware](https://github.com/chimurai/http-proxy-middleware).
 
 For example:
+
 ```js
 {
   ...
@@ -125,7 +126,7 @@ npm remove -g eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-babel 
 
 ## Installing a Dependency
 
-The generated project includes Enact (and all its libraries). It also includes React and ReactDOM.  For test writing, both Sinon and Enzyme are as development dependencies. You may install other dependencies with `npm`:
+The generated project includes Enact (and all its libraries). It also includes React and ReactDOM. For test writing, both Sinon and Enzyme are as development dependencies. You may install other dependencies with `npm`:
 
 ```sh
 npm install --save <package-name>
@@ -141,12 +142,12 @@ For example:
 ### `Button.js`
 
 ```js
-import kind from '@enact/core/kind';
+import kind from "@enact/core/kind";
 
 const Button = kind({
   render() {
     // ...
-  }
+  },
 });
 
 export default Button; // Don’t forget to use export default!
@@ -154,15 +155,14 @@ export default Button; // Don’t forget to use export default!
 
 ### `DangerButton.js`
 
-
 ```js
-import kind from '@enact/core/kind';
-import Button from './Button'; // Import a component from another file
+import kind from "@enact/core/kind";
+import Button from "./Button"; // Import a component from another file
 
 const DangerButton = kind({
   render(props) {
     return <Button {...props} color="red" />;
-  }
+  },
 });
 
 export default DangerButton;
@@ -176,9 +176,9 @@ Named exports are useful for utility modules that export several functions. A mo
 
 Learn more about ES6 modules:
 
-* [When to use the curly braces?](http://stackoverflow.com/questions/36795819/react-native-es-6-when-should-i-use-curly-braces-for-import/36796281#36796281)
-* [Exploring ES6: Modules](http://exploringjs.com/es6/ch_modules.html)
-* [Understanding ES6: Modules](https://leanpub.com/understandinges6/read#leanpub-auto-encapsulating-code-with-modules)
+- [When to use the curly braces?](http://stackoverflow.com/questions/36795819/react-native-es-6-when-should-i-use-curly-braces-for-import/36796281#36796281)
+- [Exploring ES6: Modules](http://exploringjs.com/es6/ch_modules.html)
+- [Understanding ES6: Modules](https://leanpub.com/understandinges6/read#leanpub-auto-encapsulating-code-with-modules)
 
 ## Adding a LESS or CSS Stylesheet
 
@@ -221,16 +221,16 @@ You can **`import` an image right in a JavaScript module**. This tells Webpack t
 Here is an example:
 
 ```js
-import kind from '@enact/core/kind';
-import logo from './logo.png'; // Tell Webpack this JS file uses this image
+import kind from "@enact/core/kind";
+import logo from "./logo.png"; // Tell Webpack this JS file uses this image
 
 console.log(logo); // /logo.84287d09.png
 
 const Header = kind({
-  render: function() {
+  render: function () {
     // Import result is the URL of your image
     return <img src={logo} alt="Logo" />;
-  }
+  },
 });
 
 export default Header;
